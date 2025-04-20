@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ujjain_travel": {
+    "recruitment-management-system": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,13 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ujjain_travel",
+            "outputPath": "dist/recruitment-management-system",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -27,19 +32,44 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/assets/vendor/fonts/fontawesome.css",
+              "src/assets/vendor/fonts/tabler-icons.css",
+
+              "src/assets/vendor/css/rtl/core.css",
+              "src/assets/vendor/css/rtl/theme-default.css",
+
+              "src/assets/css/demo.css",
+
+              "src/assets/vendor/libs/node-waves/node-waves.css",
+              "src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
+              "src/assets/vendor/libs/typeahead-js/typeahead.css",
+              "src/assets/vendor/libs/apex-charts/apex-charts.css",
+              "src/assets/vendor/libs/swiper/swiper.css",
+              "src/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css",
+              "src/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css",
+              "src/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css",
+              "src/assets/vendor/css/pages/cards-advance.css",
+
+              "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+              "src/assets/vendor/libs/jquery/jquery.js",
+              "src/assets/vendor/libs/popper/popper.js",
+              "src/assets/vendor/js/bootstrap.js",
+              "src/assets/vendor/libs/node-waves/node-waves.js",
+              "src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
+              "src/assets/vendor/libs/hammer/hammer.js",
+              "src/assets/vendor/libs/i18n/i18n.js",
+              "src/assets/vendor/libs/typeahead-js/typeahead.js",
+              "src/assets/vendor/js/menu.js",
+
+              "src/assets/vendor/libs/apex-charts/apexcharts.js",
+              "src/assets/vendor/libs/swiper/swiper.js",
+              "src/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js",
+
+              "src/assets/js/main.js",
+              "src/assets/js/dashboards-analytics.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -51,8 +81,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -69,10 +99,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ujjain_travel:build:production"
+              "buildTarget": "recruitment-management-system:build:production"
             },
             "development": {
-              "buildTarget": "ujjain_travel:build:development"
+              "buildTarget": "recruitment-management-system:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,6 +118,7 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -95,9 +126,10 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         }
       }
